@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Botón para generar PDF -->
+<a href="@Url.Action("IndexPdf", "Exportar")" class="btn btn-primary">
+    Generar PDF
+</a>

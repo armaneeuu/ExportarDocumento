@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ExportarDocumento/1.0.0": {
+        "runtime": {
+          "ExportarDocumento.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ExportarDocumento/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
