@@ -1,8 +1,19 @@
 services:
   - type: web
     name: exportar-documento
-    env: aspnet
-    buildCommand: 'dotnet build'
-    startCommand: 'dotnet ExportarDocumento.dll'
-    instanceType: 1x
+    env: linux
+    buildCommand: |
+      apt-get update &&
+      apt-get install -y wget &&
+      wget https://dot.net/v1/dotnet-install.sh &&
+      chmod +x dotnet-install.sh &&
+      ./dotnet-install.sh --channel 8.0 &&
+      export DOTNET_ROOT=$HOME/.dotnet &&
+      export PATH=$HOME/.dotnet:$PATH &&
+      dotnet build -c Release
+    startCommand: |
+      export DOTNET_ROOT=$HOME/.dotnet &&
+      export PATH=$HOME/.dotnet:$PATH &&
+      dotnet ExportarDocumento.dll
     region: oregon
+    plan: free
